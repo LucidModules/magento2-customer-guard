@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace LS\CustomerGuard\Test\Unit\Model;
 
 use LS\CustomerGuard\Model\Email;
-use Magento\TestFramework\ObjectManager;
+use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use PHPUnit\Framework\TestCase;
 
 class EmailTest extends TestCase
@@ -21,7 +21,7 @@ class EmailTest extends TestCase
     {
         $email = $this->getEmail('johndoe@magento.com');
 
-        $this->assertEquals(false, $email->domainEquals('magento.com'));
+        $this->assertEquals(true, $email->domainEquals('magento.com'));
     }
 
     /**
@@ -29,13 +29,31 @@ class EmailTest extends TestCase
      *
      * when domain string does not match email domain.
      *
+     * @dataProvider falseDomainDataProvider
+     * @param string $email
+     * @param string $domain
      * @return void
      */
-    public function testDomainEqualsReturnsFalse(): void
+    public function testDomainEqualsReturnsFalse(string $email, string $domain): void
     {
-        $email = $this->getEmail('johndoe@magento.com');
+        $email = $this->getEmail($email);
 
-        $this->assertEquals(false, $email->domainEquals('adobe.com'));
+        $this->assertEquals(false, $email->domainEquals($domain));
+    }
+
+    /**
+     * Retrieve test data for falsy domain match
+     *
+     * @return array
+     */
+    public function falseDomainDataProvider(): array
+    {
+        return [
+            'invalid domain' => ['johndoe@magento.com', 'adobe.com'],
+            'empty domain' => ['johndoe@', 'adobe.com'],
+            'invalid email - no domain' => ['johndoe', 'adobe.com'],
+            'invalid email - no username' => ['adobe.com', 'adobe.com'],
+        ];
     }
 
     /**
@@ -46,6 +64,9 @@ class EmailTest extends TestCase
      */
     private function getEmail(string $emailString): Email
     {
-        return (new ObjectManager())->create(Email::class, ['email' => $emailString]);
+        /** @var Email $email */
+        $email = (new ObjectManager($this))->getObject(Email::class, ['email' => $emailString]);
+
+        return $email;
     }
 }

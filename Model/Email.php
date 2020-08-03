@@ -15,6 +15,11 @@ class Email
     private $email;
 
     /**
+     * @var string
+     */
+    private $domain;
+
+    /**
      * @param string $email
      */
     public function __construct(string $email)
@@ -30,6 +35,21 @@ class Email
      */
     public function domainEquals(string $domain): bool
     {
-        return false;
+        return $this->getDomain() === $domain;
+    }
+
+    /**
+     * Get domain for this email
+     *
+     * @return string|null
+     */
+    private function getDomain(): ?string
+    {
+        if (!$this->domain) {
+            $this->domain = explode('@', $this->email);
+            $this->domain = $this->domain[1] ?? null;
+        }
+
+        return $this->domain;
     }
 }
