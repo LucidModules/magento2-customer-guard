@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="ls_customer_guard" translate="label" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Customer Guard</label>
+            <tab>customer</tab>
+            <resource>Magento_Customer::config_customer</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Account Registration Guard</label>
+                <field id="blocked_email_domains" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Blocked Email Domains</label>
+                </field>
+                <field id="allowed_email_domains" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Allowed Email Domains</label>
+                </field>
+                <field id="max_first_name_length" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Max First Name Length</label>
+                    <validate>validate-digits validate-zero-or-greater</validate>
+                    <comment>Set 0 to disable this validation</comment>
+                </field>
+                <field id="max_last_name_length" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Max Last Name Length</label>
+                    <validate>validate-digits validate-zero-or-greater</validate>
+                    <comment>Set 0 to disable this validation</comment>
+                </field>
+                <field id="register_restriction_message" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Register Signup Message</label>
+                    <comment>Message displayed for the Customer when his registration was not allowed by the rules</comment>
+                </field>
+                <field id="blocked_customer_names" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Blocked Customer Names</label>
+                    <comment>RegEx?</comment>
+                </field>
+                <field id="blocked_ips" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Blocked IPs</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

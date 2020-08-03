@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="LS\CustomerGuard\Model\ConfigInterface" type="LS\CustomerGuard\Model\Config" />
+    <type name="Magento\Customer\Model\Registration">
+        <plugin name="lsCustomerGuardConditions" type="\LS\CustomerGuard\Plugin\CustomerRegistrationPlugin" />
+    </type>
+</config>
