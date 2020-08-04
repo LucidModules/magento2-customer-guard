@@ -30,7 +30,7 @@
                 </field>
                 <field id="blocked_customer_names" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Blocked Customer Names</label>
-                    <comment>RegEx?</comment>
+                    <comment>Comma (,) separated values</comment>
                 </field>
                 <field id="blocked_ips" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Blocked IPs</label>
