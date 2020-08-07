@@ -96,6 +96,7 @@ class BlockedIpsConditionTest extends TestCase
     private function getRemoteAddressMock(string $ip): RemoteAddress
     {
         $remoteAddressMock = $this->getMockBuilder(RemoteAddress::class)
+            ->disableOriginalConstructor()
             ->getMock();
         $remoteAddressMock->method('getRemoteAddress')
             ->willReturn($ip);

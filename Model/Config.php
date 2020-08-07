@@ -45,7 +45,7 @@ class Config implements ConfigInterface
             ScopeInterface::SCOPE_STORE
         );
 
-        return explode(',', $value);
+        return $this->safeExplode($value);
     }
 
     /**
@@ -58,11 +58,10 @@ class Config implements ConfigInterface
             ScopeInterface::SCOPE_STORE
         );
 
-        return explode(',', $value);
+        return $this->safeExplode($value);
     }
 
     /**
-     * TODO: allow to set in config value again as empty
      * @inheritDoc
      */
     public function getMaxFirstNameLength(): ?int
@@ -109,7 +108,7 @@ class Config implements ConfigInterface
             ScopeInterface::SCOPE_STORE
         );
 
-        return explode(',', $value);
+        return $this->safeExplode($value);
     }
 
     /**
@@ -122,6 +121,23 @@ class Config implements ConfigInterface
             ScopeInterface::SCOPE_STORE
         );
 
-        return explode(',', $value);
+        return $this->safeExplode($value);
+    }
+
+    /**
+     * Strips whitespace from the exploded string elements.
+     *
+     * @param string $value
+     * @param string $delimiter
+     * @return array
+     */
+    private function safeExplode(string $value, string $delimiter = ','): array
+    {
+        $array = explode($delimiter, $value);
+        $array = array_map(function (string $value) {
+            return trim($value);
+        }, $array);
+
+        return $array;
     }
 }

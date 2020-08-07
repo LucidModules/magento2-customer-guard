@@ -10,9 +10,11 @@
                 <label>Account Registration Guard</label>
                 <field id="blocked_email_domains" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Blocked Email Domains</label>
+                    <comment>Comma separated values.</comment>
                 </field>
                 <field id="allowed_email_domains" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Allowed Email Domains</label>
+                    <comment>Comma separated values.</comment>
                 </field>
                 <field id="max_first_name_length" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Max First Name Length</label>
@@ -30,10 +32,11 @@
                 </field>
                 <field id="blocked_customer_names" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Blocked Customer Names</label>
-                    <comment>Comma (,) separated values</comment>
+                    <comment>Comma separated values</comment>
                 </field>
                 <field id="blocked_ips" translate="label" type="textarea" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
                     <label>Blocked IPs</label>
+                    <comment>Comma separated values</comment>
                 </field>
             </group>
         </section>

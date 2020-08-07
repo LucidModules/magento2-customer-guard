@@ -72,6 +72,8 @@ class NameLengthConditionTest extends TestCase
     {
         return [
             [2, 2, 'john', 'doe'],
+            [10, 2, 'john', 'doe'],
+            [0, 2, 'john', 'doe'],
         ];
     }
 
@@ -85,6 +87,8 @@ class NameLengthConditionTest extends TestCase
         return [
             [20, 40, 'john', 'doe'],
             [4, 3, 'john', 'doe'],
+            'unlimited firstname' => [0, 3, 'john', 'doe'],
+            'unlimited lastname' => [4, 0, 'john', 'doe'],
         ];
     }
 

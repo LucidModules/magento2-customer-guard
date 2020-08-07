@@ -30,7 +30,14 @@ class NameLengthCondition implements RegisterConditionInterface
      */
     public function isAllowed(CustomerInterface $customer): bool
     {
-        return mb_strlen($customer->getLastname()) <= $this->config->getMaxLastNameLength()
-            && mb_strlen($customer->getFirstname()) <= $this->config->getMaxFirstNameLength();
+        $result = true;
+        if ($this->config->getMaxFirstNameLength() > 0) {
+            $result &= mb_strlen($customer->getFirstname()) <= $this->config->getMaxFirstNameLength();
+        }
+        if ($this->config->getMaxLastNameLength() > 0) {
+            $result &= mb_strlen($customer->getLastname()) <= $this->config->getMaxLastNameLength();
+        }
+
+        return (bool)$result;
     }
 }
