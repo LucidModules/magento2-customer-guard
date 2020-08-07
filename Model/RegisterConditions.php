@@ -23,15 +23,23 @@ class RegisterConditions implements RegisterConditionInterface
     private $logger;
 
     /**
+     * @var ConfigInterface
+     */
+    private $config;
+
+    /**
      * @param LoggerInterface $logger
+     * @param ConfigInterface $config
      * @param RegisterConditionInterface[] $conditions
      */
     public function __construct(
         LoggerInterface $logger,
+        ConfigInterface $config,
         array $conditions = []
     ) {
         $this->conditions = $conditions;
         $this->logger = $logger;
+        $this->config = $config;
     }
 
     /**
@@ -41,11 +49,31 @@ class RegisterConditions implements RegisterConditionInterface
     {
         foreach ($this->conditions as $condition) {
             if (!$condition->isAllowed($customer)) {
-                $this->logger->debug('Condition blocked: ' . get_class($condition));
+                if ($this->config->getIsDebug()) {
+                    $this->logDebugData($customer, $condition);
+                }
                 return false;
             }
         }
 
         return true;
     }
+
+    /**
+     * Log debug info about failed condition
+     *
+     * @param CustomerInterface $customer
+     * @param RegisterConditionInterface $condition
+     */
+    private function logDebugData(CustomerInterface $customer, RegisterConditionInterface $condition): void
+    {
+        $this->logger->debug(
+            'Register was blocked by condition.',
+            [
+                'customerEmail' => $customer->getEmail(),
+                'condition' => get_class($condition)
+            ]
+        );
+    }
+
 }

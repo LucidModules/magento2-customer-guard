@@ -57,4 +57,11 @@ interface ConfigInterface
      * @return string[]
      */
     public function getBlockedIps(): array;
+
+    /**
+     * Check whether debug mode is enabled.
+     *
+     * @return bool
+     */
+    public function getIsDebug(): bool;
 }

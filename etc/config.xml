@@ -6,6 +6,7 @@
                 <max_first_name_length>0</max_first_name_length>
                 <max_last_name_length>0</max_last_name_length>
                 <register_restriction_message>Your account registration has been detected as spam. Please contact administrator.</register_restriction_message>
+                <is_debug>0</is_debug>
             </general>
         </ls_customer_guard>
     </default>

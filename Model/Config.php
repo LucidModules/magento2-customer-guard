@@ -20,6 +20,7 @@ class Config implements ConfigInterface
     private const REGISTER_RESTRICTION_MESSAGE_PATH = self::GENERAL_CONFIG_PATH . 'register_restriction_message';
     private const BLOCKED_CUSTOMER_NAMES_PATH = self::GENERAL_CONFIG_PATH . 'blocked_customer_names';
     private const BLOCKED_IPS_PATH = self::GENERAL_CONFIG_PATH . 'blocked_ips';
+    private const IS_DEBUG_PATH = self::GENERAL_CONFIG_PATH . 'is_debug';
 
     /**
      * @var ScopeConfigInterface
@@ -122,6 +123,14 @@ class Config implements ConfigInterface
         );
 
         return $this->safeExplode($value);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getIsDebug(): bool
+    {
+        return (bool)$this->scopeConfig->getValue(self::IS_DEBUG_PATH);
     }
 
     /**
