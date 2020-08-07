@@ -35,7 +35,7 @@ class Email
      */
     public function domainEquals(string $domain): bool
     {
-        return $this->getDomain() === $domain;
+        return strcasecmp($this->getDomain(), $domain) === 0;
     }
 
     /**

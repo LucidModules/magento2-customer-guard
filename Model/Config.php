@@ -137,6 +137,7 @@ class Config implements ConfigInterface
         $array = array_map(function (string $value) {
             return trim($value);
         }, $array);
+        $array = array_filter($array, 'strlen');
 
         return $array;
     }

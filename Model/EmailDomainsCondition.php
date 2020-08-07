@@ -55,11 +55,11 @@ class EmailDomainsCondition implements RegisterConditionInterface
         $blockedEmailDomains = $this->config->getBlockedEmailDomains();
         foreach ($blockedEmailDomains as $blockedEmailDomain) {
             if ($email->domainEquals($blockedEmailDomain)) {
-                return false;
+                return true;
             }
         }
 
-        return true;
+        return false;
     }
 
     /**
@@ -73,6 +73,7 @@ class EmailDomainsCondition implements RegisterConditionInterface
     private function isDomainAllowed(Email $email): bool
     {
         $allowedEmailDomains = $this->config->getAllowedEmailDomains();
+
         if (empty($allowedEmailDomains)) {
             return true;
         }

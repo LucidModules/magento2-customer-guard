@@ -79,6 +79,10 @@ class CustomerRegistrationPlugin
         }
 
         $customer = $this->customerExtractor->extract('customer_account_create', $this->request);
+        if (empty($customer->getEmail())) {
+            return $result;
+        }
+
         $isAllowed = $this->registerCondition->isAllowed($customer);
         if (!$isAllowed) {
             $this->messageManager->addErrorMessage($this->config->getRegisterRestrictionMessage());
