@@ -6,6 +6,9 @@ namespace LS\CustomerGuard\Model;
 
 use Magento\Customer\Api\Data\CustomerInterface;
 
+/**
+ * Interface defining contract for Register Conditions.
+ */
 interface RegisterConditionInterface
 {
     /**

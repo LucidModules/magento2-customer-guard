@@ -7,6 +7,9 @@ namespace LS\CustomerGuard\Model;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 
+/**
+ * Module configuration
+ */
 class Config implements ConfigInterface
 {
     private const GENERAL_CONFIG_PATH = 'ls_customer_guard/general/';

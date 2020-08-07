@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace LS\CustomerGuard\Model;
 
-use Magento\Store\Model\ScopeInterface;
-
+/**
+ * Interface for module configuration
+ */
 interface ConfigInterface
 {
     /**
