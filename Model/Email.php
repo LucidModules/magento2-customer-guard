@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LS\CustomerGuard\Model;
+namespace LucidSolutions\CustomerGuard\Model;
 
 /**
  * Customer's email validation

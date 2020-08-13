@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LS\CustomerGuard\Test\Unit\Model;
+namespace LucidSolutions\CustomerGuard\Test\Unit\Model;
 
-use LS\CustomerGuard\Model\ConfigInterface;
-use LS\CustomerGuard\Model\NameLengthCondition;
+use LucidSolutions\CustomerGuard\Model\ConfigInterface;
+use LucidSolutions\CustomerGuard\Model\NameLengthCondition;
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use PHPUnit\Framework\MockObject\MockObject;

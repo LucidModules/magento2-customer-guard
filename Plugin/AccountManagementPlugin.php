@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LS\CustomerGuard\Plugin;
+namespace LucidSolutions\CustomerGuard\Plugin;
 
-use LS\CustomerGuard\Model\ConfigInterface;
-use LS\CustomerGuard\Model\RegisterConditionInterface;
+use LucidSolutions\CustomerGuard\Model\ConfigInterface;
+use LucidSolutions\CustomerGuard\Model\RegisterConditionInterface;
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Framework\Exception\LocalizedException;

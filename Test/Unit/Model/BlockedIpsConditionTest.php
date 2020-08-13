@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace LS\CustomerGuard\Test\Unit\Model;
+namespace LucidSolutions\CustomerGuard\Test\Unit\Model;
 
-use LS\CustomerGuard\Model\BlockedIpsCondition;
-use LS\CustomerGuard\Model\ConfigInterface;
+use LucidSolutions\CustomerGuard\Model\BlockedIpsCondition;
+use LucidSolutions\CustomerGuard\Model\ConfigInterface;
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;

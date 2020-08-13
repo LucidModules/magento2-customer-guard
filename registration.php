@@ -6,6 +6,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'LS_CustomerGuard',
+    'LucidSolutions_CustomerGuard',
     __DIR__
 );

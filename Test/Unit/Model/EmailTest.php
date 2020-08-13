@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace LS\CustomerGuard\Test\Unit\Model;
+namespace LucidSolutions\CustomerGuard\Test\Unit\Model;
 
-use LS\CustomerGuard\Model\Email;
+use LucidSolutions\CustomerGuard\Model\Email;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use PHPUnit\Framework\TestCase;
 

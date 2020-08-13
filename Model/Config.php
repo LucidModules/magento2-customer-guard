@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LS\CustomerGuard\Model;
+namespace LucidSolutions\CustomerGuard\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
@@ -12,7 +12,7 @@ use Magento\Store\Model\ScopeInterface;
  */
 class Config implements ConfigInterface
 {
-    private const GENERAL_CONFIG_PATH = 'ls_customer_guard/general/';
+    private const GENERAL_CONFIG_PATH = 'lucid_solutions_customer_guard/general/';
     private const BLOCKED_EMAIL_DOMAINS_PATH = self::GENERAL_CONFIG_PATH . 'blocked_email_domains';
     private const ALLOWED_EMAIL_DOMAINS_PATH = self::GENERAL_CONFIG_PATH . 'allowed_email_domains';
     private const MAX_FIRST_NAME_LENGTH_PATH = self::GENERAL_CONFIG_PATH . 'max_first_name_length';

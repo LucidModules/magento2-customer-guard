@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="ls_customer_guard" translate="label" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="lucid_solutions_customer_guard" translate="label" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Customer Guard</label>
             <tab>customer</tab>

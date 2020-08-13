@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LS\CustomerGuard\Model;
+namespace LucidSolutions\CustomerGuard\Model;
 
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
