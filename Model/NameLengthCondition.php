@@ -34,6 +34,7 @@ class NameLengthCondition implements RegisterConditionInterface
         if ($this->config->getMaxFirstNameLength() > 0) {
             $result &= mb_strlen($customer->getFirstname()) <= $this->config->getMaxFirstNameLength();
         }
+
         if ($this->config->getMaxLastNameLength() > 0) {
             $result &= mb_strlen($customer->getLastname()) <= $this->config->getMaxLastNameLength();
         }

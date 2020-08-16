@@ -72,7 +72,7 @@ class Config implements ConfigInterface
             ScopeInterface::SCOPE_STORE
         );
 
-        return empty($value) ? (int)$value : null;
+        return !empty($value) ? (int)$value : null;
     }
 
     /**
@@ -85,7 +85,7 @@ class Config implements ConfigInterface
             ScopeInterface::SCOPE_STORE
         );
 
-        return empty($value) ? (int)$value : null;
+        return !empty($value) ? (int)$value : null;
     }
 
     /**

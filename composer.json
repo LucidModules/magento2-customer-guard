@@ -2,14 +2,13 @@
     "name": "lucid-solutions/module-customer-guard",
     "description": "Prevents registering fake accounts",
     "type": "magento2-module",
-    "license": "proprietary",
-    "minimum-stability": "dev",
+    "license": "OS3",
     "require": {
         "php": "~7.1.3|~7.2.0|~7.3.0|~7.4.0",
-        "magento/framework": "102.0.*",
-        "magento/module-backend": "101.0.*",
-        "magento/module-store": "102.0.*",
-        "magento/module-customer": "102.0.*"
+        "magento/framework": "^102.0",
+        "magento/module-backend": "^101.0",
+        "magento/module-store": "^101.0",
+        "magento/module-customer": "^102.0"
     },
     "autoload": {
         "psr-4": {
