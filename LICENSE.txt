@@ -1,0 +1,12 @@
+Copyright © 2020-present Lucid Solutions
+
+This agreement gives you the right to use only one license for one module to install for your site.
+You are not allowed to use one license for multiple Magento installations.
+A separate License must be purchased for each new Magento installation.
+You may not give, sell, distribute, sub-license, rent, lease or lend any portion of the module to anyone.
+You may not place the module on a server so that it is accessible via a public network such as the Internet for distribution purposes.
+
+THE SOFTWARE AND DOCUMENTATION, IF ANY, ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE AND DOCUMENTATION.
