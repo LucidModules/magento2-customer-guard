@@ -2,7 +2,7 @@
     "name": "lucid-solutions/module-customer-guard",
     "description": "Prevents registering fake accounts",
     "type": "magento2-module",
-    "license": "OS3",
+    "license": "proprietary",
     "require": {
         "php": "~7.1.3|~7.2.0|~7.3.0|~7.4.0",
         "magento/framework": "^102.0",
