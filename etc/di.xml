@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
-<!--Copyright © Lucid Solutions. All rights reserved.-->
+<!--Copyright © Lucid Modules. All rights reserved.-->
 <!--See LICENSE.txt for license details.-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="LucidSolutions\CustomerGuard\Model\ConfigInterface" type="LucidSolutions\CustomerGuard\Model\Config" />
-    <preference for="LucidSolutions\CustomerGuard\Model\RegisterConditionInterface" type="LucidSolutions\CustomerGuard\Model\RegisterConditions" />
+    <preference for="LucidModules\CustomerGuard\Model\ConfigInterface" type="LucidModules\CustomerGuard\Model\Config" />
+    <preference for="LucidModules\CustomerGuard\Model\RegisterConditionInterface" type="LucidModules\CustomerGuard\Model\RegisterConditions" />
     <type name="Magento\Customer\Api\AccountManagementInterface">
-        <plugin name="lucidSolutionsCustomerGuardConditions" type="LucidSolutions\CustomerGuard\Plugin\AccountManagementPlugin" />
+        <plugin name="lucidModulesCustomerGuardConditions" type="LucidModules\CustomerGuard\Plugin\AccountManagementPlugin" />
     </type>
-    <type name="LucidSolutions\CustomerGuard\Model\RegisterConditions">
+    <type name="LucidModules\CustomerGuard\Model\RegisterConditions">
         <arguments>
             <argument name="conditions" xsi:type="array">
-                <item name="blockedIps" xsi:type="object">LucidSolutions\CustomerGuard\Model\BlockedIpsCondition</item>
-                <item name="blockedNames" xsi:type="object">LucidSolutions\CustomerGuard\Model\BlockedNamesCondition</item>
-                <item name="emailDomains" xsi:type="object">LucidSolutions\CustomerGuard\Model\EmailDomainsCondition</item>
-                <item name="nameLength" xsi:type="object">LucidSolutions\CustomerGuard\Model\NameLengthCondition</item>
+                <item name="blockedIps" xsi:type="object">LucidModules\CustomerGuard\Model\BlockedIpsCondition</item>
+                <item name="blockedNames" xsi:type="object">LucidModules\CustomerGuard\Model\BlockedNamesCondition</item>
+                <item name="emailDomains" xsi:type="object">LucidModules\CustomerGuard\Model\EmailDomainsCondition</item>
+                <item name="nameLength" xsi:type="object">LucidModules\CustomerGuard\Model\NameLengthCondition</item>
             </argument>
         </arguments>
     </type>

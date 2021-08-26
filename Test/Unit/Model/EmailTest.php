@@ -1,14 +1,14 @@
 <?php
 /**
- * Copyright © Lucid Solutions. All rights reserved.
+ * Copyright © Lucid Modules. All rights reserved.
  * See LICENSE.txt for license details.
  */
 
 declare(strict_types=1);
 
-namespace LucidSolutions\CustomerGuard\Test\Unit\Model;
+namespace LucidModules\CustomerGuard\Test\Unit\Model;
 
-use LucidSolutions\CustomerGuard\Model\Email;
+use LucidModules\CustomerGuard\Model\Email;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use PHPUnit\Framework\TestCase;
 

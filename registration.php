@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright © Lucid Solutions. All rights reserved.
+ * Copyright © Lucid Modules. All rights reserved.
  * See LICENSE.txt for license details.
  */
 
@@ -10,6 +10,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'LucidSolutions_CustomerGuard',
+    'LucidModules_CustomerGuard',
     __DIR__
 );

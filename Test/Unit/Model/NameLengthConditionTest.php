@@ -1,15 +1,15 @@
 <?php
 /**
- * Copyright © Lucid Solutions. All rights reserved.
+ * Copyright © Lucid Modules. All rights reserved.
  * See LICENSE.txt for license details.
  */
 
 declare(strict_types=1);
 
-namespace LucidSolutions\CustomerGuard\Test\Unit\Model;
+namespace LucidModules\CustomerGuard\Test\Unit\Model;
 
-use LucidSolutions\CustomerGuard\Model\ConfigInterface;
-use LucidSolutions\CustomerGuard\Model\NameLengthCondition;
+use LucidModules\CustomerGuard\Model\ConfigInterface;
+use LucidModules\CustomerGuard\Model\NameLengthCondition;
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use PHPUnit\Framework\MockObject\MockObject;

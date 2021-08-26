@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
-<!--Copyright © Lucid Solutions. All rights reserved.-->
+<!--Copyright © Lucid Modules. All rights reserved.-->
 <!--See LICENSE.txt for license details.-->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <lucid_solutions_customer_guard>
+        <lucid_modules_customer_guard>
             <general>
                 <max_first_name_length>0</max_first_name_length>
                 <max_last_name_length>0</max_last_name_length>
                 <register_restriction_message>Your account registration has been detected as spam. Please contact administrator.</register_restriction_message>
                 <is_debug>0</is_debug>
             </general>
-        </lucid_solutions_customer_guard>
+        </lucid_modules_customer_guard>
     </default>
 </config>

@@ -1,15 +1,15 @@
 <?php
 /**
- * Copyright © Lucid Solutions. All rights reserved.
+ * Copyright © Lucid Modules. All rights reserved.
  * See LICENSE.txt for license details.
  */
 
 declare(strict_types=1);
 
-namespace LucidSolutions\CustomerGuard\Plugin;
+namespace LucidModules\CustomerGuard\Plugin;
 
-use LucidSolutions\CustomerGuard\Model\ConfigInterface;
-use LucidSolutions\CustomerGuard\Model\RegisterConditionInterface;
+use LucidModules\CustomerGuard\Model\ConfigInterface;
+use LucidModules\CustomerGuard\Model\RegisterConditionInterface;
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Api\Data\CustomerInterface;
 use Magento\Framework\Exception\LocalizedException;

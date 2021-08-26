@@ -1,14 +1,14 @@
 <?php
 /**
- * Copyright © Lucid Solutions. All rights reserved.
+ * Copyright © Lucid Modules. All rights reserved.
  * See LICENSE.txt for license details.
  */
 
 declare(strict_types=1);
 
-namespace LucidSolutions\CustomerGuard\Test\Unit\Model;
+namespace LucidModules\CustomerGuard\Test\Unit\Model;
 
-use LucidSolutions\CustomerGuard\Model\Config;
+use LucidModules\CustomerGuard\Model\Config;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use Magento\Store\Model\ScopeInterface;
@@ -321,6 +321,6 @@ class ConfigTest extends TestCase
      */
     private function getGeneralConfigPath(string $path): string
     {
-        return 'lucid_solutions_customer_guard/general/' . $path;
+        return 'lucid_modules_customer_guard/general/' . $path;
     }
 }
