@@ -36,9 +36,7 @@ class RegisterConditions implements RegisterConditionInterface
     {
         foreach ($this->conditions as $condition) {
             if (!$condition->isAllowed($customer)) {
-                if ($this->config->getIsDebug()) {
-                    $this->logDebugData($customer, $condition);
-                }
+                $this->maybeDebugLog($customer, $condition);
                 return false;
             }
         }
@@ -47,13 +45,17 @@ class RegisterConditions implements RegisterConditionInterface
     }
 
     /**
-     * Log debug info about failed condition
+     * Conditionally log debug info about failed condition
      *
      * @param CustomerInterface $customer
      * @param RegisterConditionInterface $condition
      */
-    private function logDebugData(CustomerInterface $customer, RegisterConditionInterface $condition): void
+    private function maybeDebugLog(CustomerInterface $customer, RegisterConditionInterface $condition): void
     {
+        if (!$this->config->getIsDebug()) {
+            return;
+        }
+
         $this->logger->debug(
             'Register was blocked by condition.',
             [
@@ -62,5 +64,4 @@ class RegisterConditions implements RegisterConditionInterface
             ]
         );
     }
-
 }
