@@ -16,19 +16,13 @@ class Email
     /**
      * @var string
      */
-    private $email;
-
-    /**
-     * @var string
-     */
-    private $domain;
+    private string $domain;
 
     /**
      * @param string $email
      */
-    public function __construct(string $email)
+    public function __construct(private readonly string $email)
     {
-        $this->email = $email;
     }
 
     /**
@@ -50,8 +44,8 @@ class Email
     private function getDomain(): ?string
     {
         if (!$this->domain) {
-            $this->domain = explode('@', $this->email);
-            $this->domain = $this->domain[1] ?? null;
+            $domainParts = explode('@', $this->email);
+            $this->domain = $domainParts[1] ?? null;
         }
 
         return $this->domain;

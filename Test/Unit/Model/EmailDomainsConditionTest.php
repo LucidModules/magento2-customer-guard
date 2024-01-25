@@ -20,22 +20,22 @@ use PHPUnit\Framework\TestCase;
 class EmailDomainsConditionTest extends TestCase
 {
     /**
-     * @var MockObject
+     * @var ConfigInterface|MockObject
      */
-    private $configMock;
+    private MockObject|ConfigInterface $configMock;
 
     /**
      * @var EmailDomainsCondition
      */
-    private $emailDomainsCondition;
+    private EmailDomainsCondition $emailDomainsCondition;
 
     /**
      * @var MockObject|CustomerInterface
      */
-    private $customerMock;
+    private CustomerInterface|MockObject $customerMock;
 
     /**
-     * @inheritDoc
+     * @return void
      */
     protected function setUp(): void
     {

@@ -27,21 +27,15 @@ class Config implements ConfigInterface
     private const IS_DEBUG_PATH = self::GENERAL_CONFIG_PATH . 'is_debug';
 
     /**
-     * @var ScopeConfigInterface
-     */
-    private $scopeConfig;
-
-    /**
      * @param ScopeConfigInterface $scopeConfig
      */
     public function __construct(
-        ScopeConfigInterface $scopeConfig
+        private readonly ScopeConfigInterface $scopeConfig
     ) {
-        $this->scopeConfig = $scopeConfig;
     }
 
     /**
-     * @inheritDoc
+     * @return string[]
      */
     public function getBlockedEmailDomains(): array
     {
@@ -54,7 +48,7 @@ class Config implements ConfigInterface
     }
 
     /**
-     * @inheritDoc
+     * @return string[]
      */
     public function getAllowedEmailDomains(): array
     {
@@ -67,7 +61,7 @@ class Config implements ConfigInterface
     }
 
     /**
-     * @inheritDoc
+     * @return int|null
      */
     public function getMaxFirstNameLength(): ?int
     {
@@ -80,7 +74,7 @@ class Config implements ConfigInterface
     }
 
     /**
-     * @inheritDoc
+     * @return int|null
      */
     public function getMaxLastNameLength(): ?int
     {
@@ -93,7 +87,7 @@ class Config implements ConfigInterface
     }
 
     /**
-     * @inheritDoc
+     * @return string
      */
     public function getRegisterRestrictionMessage(): string
     {
@@ -104,7 +98,7 @@ class Config implements ConfigInterface
     }
 
     /**
-     * @inheritDoc
+     * @return string[]
      */
     public function getBlockedCustomerNames(): array
     {
@@ -117,7 +111,7 @@ class Config implements ConfigInterface
     }
 
     /**
-     * @inheritDoc
+     * @return string[]
      */
     public function getBlockedIps(): array
     {
@@ -130,7 +124,7 @@ class Config implements ConfigInterface
     }
 
     /**
-     * @inheritDoc
+     * @return bool
      */
     public function getIsDebug(): bool
     {
@@ -142,7 +136,7 @@ class Config implements ConfigInterface
      *
      * @param string $value
      * @param string $delimiter
-     * @return array
+     * @return string[]
      */
     private function safeExplode(string $value, string $delimiter = ','): array
     {
@@ -150,8 +144,7 @@ class Config implements ConfigInterface
         $array = array_map(function (string $value) {
             return trim($value);
         }, $array);
-        $array = array_filter($array, 'strlen');
 
-        return $array;
+        return array_filter($array, 'strlen');
     }
 }

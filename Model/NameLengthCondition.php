@@ -16,21 +16,16 @@ use Magento\Customer\Api\Data\CustomerInterface;
 class NameLengthCondition implements RegisterConditionInterface
 {
     /**
-     * @var ConfigInterface
-     */
-    private $config;
-
-    /**
      * @param ConfigInterface $config
      */
     public function __construct(
-        ConfigInterface $config
+        private readonly ConfigInterface $config
     ) {
-        $this->config = $config;
     }
 
     /**
-     * @inheritDoc
+     * @param CustomerInterface $customer
+     * @return bool
      */
     public function isAllowed(CustomerInterface $customer): bool
     {

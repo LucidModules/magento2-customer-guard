@@ -17,45 +17,26 @@ use Psr\Log\LoggerInterface;
 class RegisterConditions implements RegisterConditionInterface
 {
     /**
-     * @var RegisterConditionInterface[]
-     */
-    private $conditions;
-
-    /**
-     * @var LoggerInterface
-     */
-    private $logger;
-
-    /**
-     * @var ConfigInterface
-     */
-    private $config;
-
-    /**
      * @param LoggerInterface $logger
      * @param ConfigInterface $config
      * @param RegisterConditionInterface[] $conditions
      */
     public function __construct(
-        LoggerInterface $logger,
-        ConfigInterface $config,
-        array $conditions = []
+        private readonly LoggerInterface $logger,
+        private readonly ConfigInterface $config,
+        private readonly array $conditions = []
     ) {
-        $this->conditions = $conditions;
-        $this->logger = $logger;
-        $this->config = $config;
     }
 
     /**
-     * @inheritDoc
+     * @param CustomerInterface $customer
+     * @return bool
      */
     public function isAllowed(CustomerInterface $customer): bool
     {
         foreach ($this->conditions as $condition) {
             if (!$condition->isAllowed($customer)) {
-                if ($this->config->getIsDebug()) {
-                    $this->logDebugData($customer, $condition);
-                }
+                $this->maybeDebugLog($customer, $condition);
                 return false;
             }
         }
@@ -64,13 +45,17 @@ class RegisterConditions implements RegisterConditionInterface
     }
 
     /**
-     * Log debug info about failed condition
+     * Conditionally log debug info about failed condition
      *
      * @param CustomerInterface $customer
      * @param RegisterConditionInterface $condition
      */
-    private function logDebugData(CustomerInterface $customer, RegisterConditionInterface $condition): void
+    private function maybeDebugLog(CustomerInterface $customer, RegisterConditionInterface $condition): void
     {
+        if (!$this->config->getIsDebug()) {
+            return;
+        }
+
         $this->logger->debug(
             'Register was blocked by condition.',
             [
@@ -79,5 +64,4 @@ class RegisterConditions implements RegisterConditionInterface
             ]
         );
     }
-
 }
