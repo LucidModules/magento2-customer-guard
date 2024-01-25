@@ -17,29 +17,18 @@ use Magento\Framework\HTTP\PhpEnvironment\RemoteAddress;
 class BlockedIpsCondition implements RegisterConditionInterface
 {
     /**
-     * @var ConfigInterface
-     */
-    private $config;
-
-    /**
-     * @var RemoteAddress
-     */
-    private $remoteAddress;
-
-    /**
      * @param ConfigInterface $config
      * @param RemoteAddress $remoteAddress
      */
     public function __construct(
-        ConfigInterface $config,
-        RemoteAddress $remoteAddress
+        private readonly ConfigInterface $config,
+        private readonly RemoteAddress $remoteAddress
     ) {
-        $this->config = $config;
-        $this->remoteAddress = $remoteAddress;
     }
 
     /**
-     * @inheritDoc
+     * @param CustomerInterface $customer
+     * @return bool
      */
     public function isAllowed(CustomerInterface $customer): bool
     {

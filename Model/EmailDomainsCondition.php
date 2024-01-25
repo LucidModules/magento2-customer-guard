@@ -16,29 +16,18 @@ use Magento\Customer\Api\Data\CustomerInterface;
 class EmailDomainsCondition implements RegisterConditionInterface
 {
     /**
-     * @var ConfigInterface
-     */
-    private $config;
-
-    /**
-     * @var EmailFactory
-     */
-    private $emailFactory;
-
-    /**
      * @param ConfigInterface $config
      * @param EmailFactory $emailFactory
      */
     public function __construct(
-        ConfigInterface $config,
-        EmailFactory $emailFactory
+        private readonly ConfigInterface $config,
+        private readonly EmailFactory $emailFactory
     ) {
-        $this->config = $config;
-        $this->emailFactory = $emailFactory;
     }
 
     /**
-     * @inheritDoc
+     * @param CustomerInterface $customer
+     * @return bool
      */
     public function isAllowed(CustomerInterface $customer): bool
     {

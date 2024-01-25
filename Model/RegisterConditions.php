@@ -17,37 +17,20 @@ use Psr\Log\LoggerInterface;
 class RegisterConditions implements RegisterConditionInterface
 {
     /**
-     * @var RegisterConditionInterface[]
-     */
-    private $conditions;
-
-    /**
-     * @var LoggerInterface
-     */
-    private $logger;
-
-    /**
-     * @var ConfigInterface
-     */
-    private $config;
-
-    /**
      * @param LoggerInterface $logger
      * @param ConfigInterface $config
      * @param RegisterConditionInterface[] $conditions
      */
     public function __construct(
-        LoggerInterface $logger,
-        ConfigInterface $config,
-        array $conditions = []
+        private readonly LoggerInterface $logger,
+        private readonly ConfigInterface $config,
+        private readonly array $conditions = []
     ) {
-        $this->conditions = $conditions;
-        $this->logger = $logger;
-        $this->config = $config;
     }
 
     /**
-     * @inheritDoc
+     * @param CustomerInterface $customer
+     * @return bool
      */
     public function isAllowed(CustomerInterface $customer): bool
     {

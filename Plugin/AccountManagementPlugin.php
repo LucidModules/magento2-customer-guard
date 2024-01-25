@@ -20,25 +20,13 @@ use Magento\Framework\Exception\LocalizedException;
 class AccountManagementPlugin
 {
     /**
-     * @var RegisterConditionInterface
-     */
-    private $registerCondition;
-
-    /**
-     * @var ConfigInterface
-     */
-    private $config;
-
-    /**
      * @param RegisterConditionInterface $registerCondition
      * @param ConfigInterface $config
      */
     public function __construct(
-        RegisterConditionInterface $registerCondition,
-        ConfigInterface $config
+        private readonly RegisterConditionInterface $registerCondition,
+        private readonly ConfigInterface $config
     ) {
-        $this->registerCondition = $registerCondition;
-        $this->config = $config;
     }
 
     /**
@@ -61,6 +49,19 @@ class AccountManagementPlugin
         $this->throwOnFailingCustomerConstraints($customer);
 
         return [$customer, $password, $redirectUrl];
+    }
+
+    /**
+     * Throws when customer does not meet configured constraints.
+     *
+     * @param CustomerInterface $customer
+     * @throws LocalizedException
+     */
+    private function throwOnFailingCustomerConstraints(CustomerInterface $customer): void
+    {
+        if (!$this->registerCondition->isAllowed($customer)) {
+            throw new LocalizedException(__($this->config->getRegisterRestrictionMessage()));
+        }
     }
 
     /**
@@ -101,18 +102,5 @@ class AccountManagementPlugin
         $this->throwOnFailingCustomerConstraints($customer);
 
         return [$customer];
-    }
-
-    /**
-     * Throws when customer does not meet configured constraints.
-     *
-     * @param CustomerInterface $customer
-     * @throws LocalizedException
-     */
-    private function throwOnFailingCustomerConstraints(CustomerInterface $customer): void
-    {
-        if (!$this->registerCondition->isAllowed($customer)) {
-            throw new LocalizedException(__($this->config->getRegisterRestrictionMessage()));
-        }
     }
 }

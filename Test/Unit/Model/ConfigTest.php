@@ -20,15 +20,15 @@ class ConfigTest extends TestCase
     /**
      * @var Config
      */
-    private $config;
+    private Config $config;
 
     /**
-     * @var MockObject
+     * @var MockObject|ScopeConfigInterface
      */
-    private $scopeConfigMock;
+    private MockObject|ScopeConfigInterface $scopeConfigMock;
 
     /**
-     * @inheritDoc
+     * @return void
      */
     public function setUp(): void
     {

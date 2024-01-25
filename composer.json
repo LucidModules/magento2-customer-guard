@@ -4,7 +4,7 @@
     "type": "magento2-module",
     "license": "MIT",
     "require": {
-        "php": "~7.1.3|~7.2.0|~7.3.0|~7.4.0",
+        "php": "~8.1.0|~8.2.0",
         "magento/framework": "^101.0|^102.0|^103.0",
         "magento/module-backend": "^101.0|^102.0|^103.0",
         "magento/module-store": "^101.0",
@@ -18,5 +18,5 @@
             "registration.php"
         ]
     },
-    "version": "1.1.0"
+    "version": "1.2.0"
 }
